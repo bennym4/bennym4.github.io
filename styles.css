@@ -44,7 +44,10 @@ body {
 
 a { color: inherit; }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- Club photos ---------- */
+.club-photo { margin: 24px 0; }
 
 .wrap {
   max-width: var(--max-width);
