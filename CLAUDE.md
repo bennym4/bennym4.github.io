@@ -29,22 +29,23 @@ or copy the draft's extra pages across without being asked.
    draft repo changes are lower stakes and can be pushed more freely
 
 ## Site structure (live repo)
-**A single page.** Everything lives in `index.html`:
-- `index.html` — the whole site. **No nav bar, on purpose** — the header
-  is the brand only. Sections in order: hero, Life at the Club (photos),
-  How to Join (`id="join"`), Find Us. In-page links use `#join`; contact
-  goes out via `tel:` and `mailto:` links.
-- `styles.css` — the design system
+2 pages, sharing one stylesheet:
+- `index.html` — Home. **No nav bar, on purpose** — the header is the
+  brand only. Sections: hero, Life at the Club (photos), New Players,
+  Find Us. Two buttons link to `join.html`.
+- `join.html` — How to Join. Nav trimmed to a **single Home link**; keep
+  it that way. Sections: hero, Three Steps, membership-fees note.
+- `styles.css` — shared design system, both pages import this
 - `CNAME` — `bowlshornby.org.nz`
 - `club-green.jpg`, `club-deck.jpg` — real club photos, in the repo root
-  (not in an `images/` folder)
+  (not in an `images/` folder), shown on the Home page
 - `README.md`, `CLAUDE.md` — housekeeping, not part of the site
 
-**No other pages exist here.** `join.html` was merged into the homepage;
-`about.html`, `news.html`, `members.html`, `contact.html`,
-`tournaments.html`, `hire.html` and `links.html` were all removed. Never
-link to any of them — the links would 404. New content becomes a new
-section on `index.html`, not a new page, unless the owner asks otherwise.
+**No other pages exist here.** `about.html`, `news.html`, `members.html`,
+`contact.html`, `tournaments.html`, `hire.html` and `links.html` were all
+removed. Never link to them from the live site — the links would 404.
+Anything that needs a contact route should use the `tel:` or `mailto:`
+links already on the pages.
 
 ## Design system (do not deviate without asking)
 - Deep turf green `#1E4630` — header/footer
@@ -87,8 +88,7 @@ notices into the live HTML.
 ## Explicitly deferred / not yet built
 - Real member login (would need Cloudflare Access — free up to 50 users,
   discussed but not yet set up)
-- Membership fees (the How to Join section has a placeholder note
-  flagging this)
+- Membership fees (join.html has a placeholder note flagging this)
 - Enforcing HTTPS, once GitHub's DNS check passes
 
 ## House style for any new copy
