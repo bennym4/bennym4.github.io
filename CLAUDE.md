@@ -9,28 +9,41 @@ lawn bowls club in Hornby, Christchurch, NZ. Hosted free on GitHub Pages.
 
 ## Repos
 - **Live site**: `bennym4/bennym4.github.io` → serves `bowlshornby.org.nz`
-  (currently UNPUBLISHED/offline — check Settings → Pages before assuming it's live)
-- **Draft site**: `bennym4/bh-preview-m4` → serves at
-  `bowlshornby.org.nz/bh-preview-m4/` (intentionally renamed from an
-  obvious name for privacy — do not rename back to anything with "bowls"
-  or "hornby" in it, and do not link to it from the live site)
+  Cut back to a two-page site (Home + How to Join). This is the repo that
+  is published — treat every change here as going straight to the public.
+- **Draft site**: `bennym4/bh-preview-m4` → the full nine-page site, kept
+  intact as the working draft. Renamed from an obvious name for privacy —
+  do not rename it back to anything with "bowls" or "hornby" in it, and
+  do not link to it from the live site.
+
+**The two repos are deliberately out of step.** The draft holds the full
+site; the live site holds the trimmed public version. Do not "sync" them
+or copy the draft's extra pages across without being asked.
 
 ## Workflow
 1. Make changes in the **draft repo** first (`bh-preview-m4`)
 2. Get sign-off (from committee or self)
-3. Copy the same files into the **live repo** (`bennym4.github.io`) to publish
+3. Copy across to the **live repo** (`bennym4.github.io`) only the pages
+   that belong on the trimmed public site
 4. Always confirm with the site owner before pushing to the LIVE repo —
    draft repo changes are lower stakes and can be pushed more freely
 
-## Site structure
-6 pages, all sharing one stylesheet:
-- `index.html` — Home
-- `about.html` — About the Club
-- `join.html` — How to Join
-- `news.html` — News & Events (draws + notices, auto-loaded — see below)
-- `members.html` — Members (placeholder/holding page only, no login yet)
-- `contact.html` — Contact (mailto form, no backend)
-- `styles.css` — shared design system, all pages import this
+## Site structure (live repo)
+2 pages, sharing one stylesheet:
+- `index.html` — Home. **No nav bar, on purpose** — the header is the
+  brand only. Links out to `join.html`, a `tel:` link and a `mailto:`.
+- `join.html` — How to Join. Nav trimmed to a single Home link.
+- `styles.css` — shared design system, both pages import this
+- `CNAME` — `bowlshornby.org.nz`
+- `club-green.jpg`, `club-deck.jpg` — real club photos, in the repo root
+  (not in an `images/` folder), shown on the Home page
+- `README.md`, `CLAUDE.md` — housekeeping, not part of the site
+
+**No other pages exist here.** `about.html`, `news.html`, `members.html`,
+`contact.html`, `tournaments.html`, `hire.html` and `links.html` were all
+removed. Never link to them from the live site — the links would 404.
+Anything that needs a contact route should use the `tel:` or `mailto:`
+links already on the pages.
 
 ## Design system (do not deviate without asking)
 - Deep turf green `#1E4630` — header/footer
@@ -41,22 +54,18 @@ lawn bowls club in Hornby, Christchurch, NZ. Hosted free on GitHub Pages.
 - Fonts: Fraunces (headings), Public Sans (body), Space Mono (small labels)
 - Signature motif: thin horizontal "rink lines" (Google Fonts imported in styles.css)
 
-## Live data — Google Sheets (already working, do not rebuild)
-`news.html` pulls live from two published Google Sheets via client-side
-fetch + CSV parsing (no backend, no API keys needed):
-- Draws sheet: 4 columns — Date, Event, Rink, Time
-- Notices sheet: 1 column — free text
+## Live data — Google Sheets
+Not on the live site. The draws/notices Google Sheets feed lived in
+`news.html`, which no longer exists here. The feed and its CSV URLs are
+still in the draft repo — do not rebuild it, and do not hardcode draws or
+notices into the live HTML.
 
-Committee members edit these sheets directly; the site updates itself.
-**Never re-hardcode draws/notices into the HTML** — the whole point was to
-make this self-service for non-technical volunteers.
-CSV URLs are already in `news.html`'s `<script>` block — don't ask for them again.
-
-## Domain / DNS (already configured, working)
+## Domain / DNS
 - Domain: `bowlshornby.org.nz`, registered via domains.co.nz
 - DNS: 4 A records at root (@) → GitHub Pages IPs
   (185.199.108/109/110/111.153), 1 CNAME (www → bennym4.github.io)
-- HTTPS enforced ✅
+- HTTPS **not enforced yet** — waiting on GitHub's DNS check to pass.
+  Once it does, tick "Enforce HTTPS" in Settings → Pages.
 
 ## Club facts (use these, don't invent others)
 - Address: 521 Main South Road (on Hornby Domain), Hornby, Christchurch 8042
@@ -65,11 +74,20 @@ CSV URLs are already in `news.html`'s `<script>` block — don't ask for them ag
 - Club has TWO full-size greens (not one — this was corrected once already)
 - New players welcome any time of season, no experience/equipment needed
 
+## Design system (do not deviate without asking)
+- Deep turf green `#1E4630` — header/footer
+- Mid green `#3F6B4A` — accents
+- Warm parchment `#F2EFE6` — page background
+- Clubhouse maroon `#8A2E35` — buttons/CTAs
+- Brass gold `#C99A2E` — dividers, highlights
+- Fonts: Fraunces (headings), Public Sans (body), Space Mono (small labels)
+- Signature motif: thin horizontal "rink lines" (Google Fonts imported in styles.css)
+
 ## Explicitly deferred / not yet built
 - Real member login (would need Cloudflare Access — free up to 50 users,
   discussed but not yet set up)
-- Real club/green photos (currently CSS placeholder boxes)
 - Membership fees (join.html has a placeholder note flagging this)
+- Enforcing HTTPS, once GitHub's DNS check passes
 
 ## House style for any new copy
 Warm, community-club tone. Not corporate. Short sentences. This club is
