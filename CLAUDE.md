@@ -115,6 +115,32 @@ notices into the live HTML.
 - Club has TWO full-size greens (not one — this was corrected once already)
 - New players welcome any time of season, no experience/equipment needed
 
+## Search engines / Google
+As of Sept 2026 the site was **not indexed at all** — `site:bowlshornby.org.nz`
+returned nothing. Nothing was blocking it (no noindex); Google had simply never
+discovered the site. It is new (first published 24 Aug 2026) and nothing links
+to it. The repo now carries `robots.txt`, `sitemap.xml`, canonical tags,
+`lang="en-NZ"` and SportsClub structured data on the Home page.
+
+Those files help Google understand the site once it arrives; they do not by
+themselves get it discovered. The things that actually do:
+- **Google Search Console** — verify, submit `sitemap.xml`, then URL Inspection →
+  Request indexing. This is the direct "please crawl me" signal.
+- **Google Business Profile** — for "bowls hornby" the map listing is what people
+  see, and it is separate from the website.
+- **A few real links** — a club listing on Bowls Canterbury / Bowls NZ, and the
+  club Facebook page. Google finds sites by following links.
+
+Search Console was set up under Stephen's personal Google account
+(`stephenbennisonnz@gmail.com`) because the club Gmail password was not to hand.
+**TO DO: once the `hornbydbc@gmail.com` password is available, add it as an Owner**
+(Settings → Users and permissions) so access belongs to the club, not one person.
+The same applies to the Google Business Profile when it is created.
+
+The structured data deliberately omits a phone number: the only club phone is
+Dave Vincent's personal mobile, and listing it there would make it the club's
+official number in Google's eyes. Ask before adding it.
+
 ## Explicitly deferred / not yet built
 - Real member login (would need Cloudflare Access — free up to 50 users,
   discussed but not yet set up)

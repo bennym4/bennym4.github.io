@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bowlshornby.org.nz/sitemap.xml
