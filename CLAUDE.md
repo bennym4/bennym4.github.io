@@ -61,6 +61,9 @@ links already on the pages.
 - Brass gold `#C99A2E` — dividers, highlights
 - Fonts: Fraunces (headings), Public Sans (body), Space Mono (small labels)
 - Signature motif: thin horizontal "rink lines" (Google Fonts imported in styles.css)
+- Hero text widths are deliberate: `.hero h1` is `max-width: 22ch` and
+  `.hero p.lede` is `56ch`. They were 14ch/46ch, which broke the headline
+  into five narrow lines. Do not reduce them without asking.
 
 ## Live data — Google Sheets
 Not on the live site. The draws/notices Google Sheets feed lived in
