@@ -66,8 +66,8 @@ notices into the live HTML.
 - Domain: `bowlshornby.org.nz`, registered via domains.co.nz
 - DNS: 4 A records at root (@) → GitHub Pages IPs
   (185.199.108/109/110/111.153), 1 CNAME (www → bennym4.github.io)
-- HTTPS **not enforced yet** — waiting on GitHub's DNS check to pass.
-  Once it does, tick "Enforce HTTPS" in Settings → Pages.
+- HTTPS **enforced** — GitHub's DNS check passed and "Enforce HTTPS" is
+  ticked in Settings → Pages. The site serves over https://.
 
 ## Club facts (use these, don't invent others)
 - Address: 521 Main South Road (on Hornby Domain), Hornby, Christchurch 8042
@@ -80,7 +80,6 @@ notices into the live HTML.
 - Real member login (would need Cloudflare Access — free up to 50 users,
   discussed but not yet set up)
 - Membership fees (join.html has a placeholder note flagging this)
-- Enforcing HTTPS, once GitHub's DNS check passes
 
 ## House style for any new copy
 Warm, community-club tone. Not corporate. Short sentences. This club is
