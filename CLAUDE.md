@@ -30,16 +30,22 @@ or copy the draft's extra pages across without being asked.
 
 ## Site structure (live repo)
 2 pages, sharing one stylesheet:
-- `index.html` — Home. **No nav bar, on purpose** — the header is the
-  brand only. Sections: hero, Life at the Club (photos), New Players,
-  Find Us. Two buttons link to `join.html`.
-- `join.html` — How to Join. Nav trimmed to a **single Home link**; keep
-  it that way. Sections: hero, Three Steps, membership-fees note.
+- `index.html` — Home. Sections: hero, Life at the Club (photos), New
+  Players, Find Us. Two buttons also link to `join.html`.
+- `join.html` — How to Join. Sections: hero, Three Steps,
+  membership-fees note.
 - `styles.css` — shared design system, both pages import this
 - `CNAME` — `bowlshornby.org.nz`
 - `club-green.jpg`, `club-deck.jpg` — real club photos, in the repo root
   (not in an `images/` folder), shown on the Home page
 - `README.md`, `CLAUDE.md` — housekeeping, not part of the site
+
+**Both pages share the same nav: `Home` · `How to Join`.** The current
+page carries `class="active"` (maroon pill) and `aria-current="page"`.
+The homepage used to have no nav at all and join.html only a single Home
+link; that was changed on purpose, because a nav that appeared on one
+page and only pointed backwards could not actually navigate. Keep the two
+navs identical — if a page is ever added, it goes in both.
 
 **No other pages exist here.** `about.html`, `news.html`, `members.html`,
 `contact.html`, `tournaments.html`, `hire.html` and `links.html` were all
