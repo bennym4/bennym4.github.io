@@ -123,13 +123,37 @@ to it. The repo now carries `robots.txt`, `sitemap.xml`, canonical tags,
 `lang="en-NZ"` and SportsClub structured data on the Home page.
 
 Those files help Google understand the site once it arrives; they do not by
-themselves get it discovered. The things that actually do:
-- **Google Search Console** — verify, submit `sitemap.xml`, then URL Inspection →
-  Request indexing. This is the direct "please crawl me" signal.
+themselves get it discovered.
+
+### Done on 22 Sept 2026
+- **Search Console verified** for the `https://bowlshornby.org.nz` URL-prefix
+  property, via the HTML file method. `google84713fbe3e786a84.html` is in the
+  repo root — **do not delete it**, Google re-checks it and removing it
+  un-verifies the site.
+- **`sitemap.xml` submitted** — reported Success, 2 pages.
+- **Indexing requested** for both `/` and `/join.html` ("added to a priority
+  crawl queue").
+
+At that point URL Inspection still read "URL is unknown to Google" and "No
+referring sitemaps detected" — that panel lags behind by a day or two and is
+not a failure. Expect crawling within days, occasionally a week or two.
+**Do not re-request indexing** while waiting: it does not speed anything up and
+there is a daily quota of about 10.
+
+There is also a second, **unverified "Domain property"** in the account, left
+over from an earlier attempt. It is harmless. Verifying it would need a DNS TXT
+record at domains.co.nz; the URL-prefix property already does everything needed.
+
+### Still to do, in order of impact
+- **A few real inbound links** — this is now the weakest signal: nothing anywhere
+  links to the site. A club listing on Bowls Canterbury / Bowls NZ, and the web
+  address on the club Facebook page, would do more than anything else.
 - **Google Business Profile** — for "bowls hornby" the map listing is what people
-  see, and it is separate from the website.
-- **A few real links** — a club listing on Bowls Canterbury / Bowls NZ, and the
-  club Facebook page. Google finds sites by following links.
+  actually tap, and it is separate from the website entirely.
+
+### How to check progress
+Search `site:bowlshornby.org.nz`. No results means still not indexed. When the
+two pages appear, it worked. Search Console's Pages report fills in as well.
 
 Search Console was set up under Stephen's personal Google account
 (`stephenbennisonnz@gmail.com`) because the club Gmail password was not to hand.
