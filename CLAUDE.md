@@ -76,15 +76,6 @@ notices into the live HTML.
 - Club has TWO full-size greens (not one — this was corrected once already)
 - New players welcome any time of season, no experience/equipment needed
 
-## Design system (do not deviate without asking)
-- Deep turf green `#1E4630` — header/footer
-- Mid green `#3F6B4A` — accents
-- Warm parchment `#F2EFE6` — page background
-- Clubhouse maroon `#8A2E35` — buttons/CTAs
-- Brass gold `#C99A2E` — dividers, highlights
-- Fonts: Fraunces (headings), Public Sans (body), Space Mono (small labels)
-- Signature motif: thin horizontal "rink lines" (Google Fonts imported in styles.css)
-
 ## Explicitly deferred / not yet built
 - Real member login (would need Cloudflare Access — free up to 50 users,
   discussed but not yet set up)
