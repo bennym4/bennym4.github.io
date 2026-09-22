@@ -55,11 +55,19 @@ Anything that needs a contact route should use the `tel:` or `mailto:`
 links already on the pages.
 
 ## Design system (do not deviate without asking)
-- Deep turf green `#1E4630` — header/footer
-- Mid green `#3F6B4A` — accents
-- Warm parchment `#F2EFE6` — page background
-- Clubhouse maroon `#8A2E35` — buttons/CTAs
-- Brass gold `#C99A2E` — dividers, highlights
+- **Nav bar**: deep turf green `#1E4630`, with a gold bottom border
+- **Hero**: clubhouse maroon `#8A2E35`, white text
+- **Body**: warm parchment `#F2EFE6`
+- **Footer**: clubhouse maroon `#8A2E35`
+- Mid green `#3F6B4A` — accents; green also stays in h2/h3 headings
+- Brass gold `#C99A2E` — dividers, highlights, badge, borders
+- This matches the scheme signed off by the members on the draft site. The
+  live site ran a green hero/footer until Sept 2026, when it was brought
+  into line. Hero and footer colour is controlled by the `.hero` and
+  `.site-footer` backgrounds — changing those two re-colours every page.
+- `.btn-primary` is maroon, which is invisible on the maroon hero, so
+  `.hero .btn-primary` is brass gold with dark text. Do not remove that
+  override: without it the main call to action has no button at all.
 - Fonts: Fraunces (headings), Public Sans (body), Space Mono (small labels)
 - Signature motif: thin horizontal "rink lines" (Google Fonts imported in styles.css)
 - Hero text widths are deliberate: `.hero h1` is `max-width: 22ch` and
@@ -67,10 +75,12 @@ links already on the pages.
   into five narrow lines. Do not reduce them without asking.
 - The Home hero is split: the photo (`.hero-media`) runs off the right
   edge at 46% width, and the text sits in `.hero-text` (max 30rem) on the
-  left. A left-to-right gradient dissolves the photo's edge into the green.
+  left. A left-to-right gradient dissolves the photo's edge into the hero
+  colour, so it uses the maroon `rgba(138, 46, 53, …)` — if the hero colour
+  ever changes, that gradient has to change with it or a hard seam appears.
   The rink-lines motif is deliberately NOT drawn over the photo — on a
-  photo it reads as scan lines. It still runs behind the plain-green parts
-  of the heroes via the `.rink-lines` class.
+  photo it reads as scan lines. It still runs behind the plain parts of the
+  heroes via the `.rink-lines` class.
 - Under 860px the photo becomes a band above the text. It carries
   `margin-top: -64px` to cancel the generic `section { padding: 64px 0 }`;
   without that it floats in a green gap below the header.
