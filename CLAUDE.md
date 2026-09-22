@@ -21,12 +21,19 @@ site; the live site holds the trimmed public version. Do not "sync" them
 or copy the draft's extra pages across without being asked.
 
 ## Workflow
-1. Make changes in the **draft repo** first (`bh-preview-m4`)
-2. Get sign-off (from committee or self)
-3. Copy across to the **live repo** (`bennym4.github.io`) only the pages
-   that belong on the trimmed public site
-4. Always confirm with the site owner before pushing to the LIVE repo —
-   draft repo changes are lower stakes and can be pushed more freely
+1. Changes to THIS two-page site are made **here, directly** — not staged in
+   the draft repo first. The draft is a different, nine-page site and the two
+   have deliberately diverged. **Do not copy files between them.**
+2. Show the owner a screenshot of the change before pushing. For design
+   changes, show mockups of the options first.
+3. **Always confirm before pushing** — everything here is public the moment
+   GitHub Pages rebuilds (about a minute).
+4. Claude pushes with git directly. After pushing, check the "pages build and
+   deployment" workflow run actually succeeded before reporting it as live.
+5. Claude cannot load this site over the network from its sandbox (egress is
+   blocked), so "the deploy is green" is not the same as "the page looks
+   right" — ask the owner to confirm the visual.
+6. Style: ELI5, structured, one step at a time. Flag honest catches.
 
 ## Site structure (live repo)
 2 pages, sharing one stylesheet:
