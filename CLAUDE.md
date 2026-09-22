@@ -67,10 +67,10 @@ links already on the pages.
   into five narrow lines. Do not reduce them without asking.
 - The Home hero is split: the photo (`.hero-media`) runs off the right
   edge at 46% width, and the text sits in `.hero-text` (max 30rem) on the
-  left. A left-to-right gradient dissolves the photo's edge into the green,
-  and the rink-lines motif is redrawn over the photo so the band reads as
-  one piece. The motif lives in the `--rink-lines` variable so the
-  `.rink-lines` class and the hero overlay share one definition.
+  left. A left-to-right gradient dissolves the photo's edge into the green.
+  The rink-lines motif is deliberately NOT drawn over the photo — on a
+  photo it reads as scan lines. It still runs behind the plain-green parts
+  of the heroes via the `.rink-lines` class.
 - Under 860px the photo becomes a band above the text. It carries
   `margin-top: -64px` to cancel the generic `section { padding: 64px 0 }`;
   without that it floats in a green gap below the header.
