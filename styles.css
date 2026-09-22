@@ -23,6 +23,13 @@
 
   --radius: 4px;
   --max-width: 1080px;
+  --rink-lines: repeating-linear-gradient(
+    to bottom,
+    rgba(201, 154, 46, 0.35) 0px,
+    rgba(201, 154, 46, 0.35) 1px,
+    transparent 1px,
+    transparent 64px
+  );
 }
 
 * { box-sizing: border-box; }
@@ -57,13 +64,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- Rink lines: signature motif ---------- */
 .rink-lines {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(201, 154, 46, 0.35) 0px,
-    rgba(201, 154, 46, 0.35) 1px,
-    transparent 1px,
-    transparent 64px
-  );
+  background-image: var(--rink-lines);
 }
 
 .divider {
@@ -165,6 +166,64 @@ a:focus-visible, button:focus-visible {
   padding: 72px 24px 88px;
   position: relative;
   z-index: 2;
+}
+
+/* Split hero: photo runs off the right edge, text keeps the left. */
+.hero-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 46%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 34% center;
+  display: block;
+}
+
+/* Dissolve the photo's left edge into the green, and carry the
+   rink-lines motif across it so the hero reads as one band. */
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--rink-lines), linear-gradient(
+    90deg,
+    rgba(30, 70, 48, 1) 0%,
+    rgba(30, 70, 48, 0) 34%
+  );
+}
+
+.hero-text {
+  max-width: 30rem;
+}
+
+.hero--split .hero h1,
+.hero--split h1 {
+  max-width: none;
+}
+
+@media (max-width: 860px) {
+  .hero-media {
+    position: static;
+    width: 100%;
+    height: 230px;
+    /* cancel the generic `section { padding: 64px 0 }` so the photo
+       sits flush under the header instead of floating in green */
+    margin-top: -64px;
+  }
+  .hero-media::after {
+    background-image: var(--rink-lines);
+  }
+  .hero-text {
+    max-width: none;
+  }
 }
 
 .eyebrow {

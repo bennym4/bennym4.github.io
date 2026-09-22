@@ -36,8 +36,9 @@ or copy the draft's extra pages across without being asked.
   membership-fees note.
 - `styles.css` — shared design system, both pages import this
 - `CNAME` — `bowlshornby.org.nz`
-- `club-green.jpg`, `club-deck.jpg` — real club photos, in the repo root
-  (not in an `images/` folder), shown on the Home page
+- `club-green.jpg` — the Home hero photo. Shown ONCE: it was removed from
+  the "Life at the Club" section so it does not appear twice on the page.
+- `club-deck.jpg` — the remaining "Life at the Club" photo
 - `README.md`, `CLAUDE.md` — housekeeping, not part of the site
 
 **Both pages share the same nav: `Home` · `How to Join`.** The current
@@ -64,6 +65,18 @@ links already on the pages.
 - Hero text widths are deliberate: `.hero h1` is `max-width: 22ch` and
   `.hero p.lede` is `56ch`. They were 14ch/46ch, which broke the headline
   into five narrow lines. Do not reduce them without asking.
+- The Home hero is split: the photo (`.hero-media`) runs off the right
+  edge at 46% width, and the text sits in `.hero-text` (max 30rem) on the
+  left. A left-to-right gradient dissolves the photo's edge into the green,
+  and the rink-lines motif is redrawn over the photo so the band reads as
+  one piece. The motif lives in the `--rink-lines` variable so the
+  `.rink-lines` class and the hero overlay share one definition.
+- Under 860px the photo becomes a band above the text. It carries
+  `margin-top: -64px` to cancel the generic `section { padding: 64px 0 }`;
+  without that it floats in a green gap below the header.
+- This was chosen over a full-bleed photo behind the whole hero: the
+  members are all in the left of the frame, which is where the text sits,
+  so a wash hid them and left only empty turf visible.
 
 ## Live data — Google Sheets
 Not on the live site. The draws/notices Google Sheets feed lived in
