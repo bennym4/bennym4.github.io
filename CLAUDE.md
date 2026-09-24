@@ -135,10 +135,16 @@ themselves get it discovered.
   crawl queue").
 
 At that point URL Inspection still read "URL is unknown to Google" and "No
-referring sitemaps detected" — that panel lags behind by a day or two and is
-not a failure. Expect crawling within days, occasionally a week or two.
+referring sitemaps detected". That panel lags by a day or two and was NOT a
+failure — worth remembering if this ever looks broken again.
 **Do not re-request indexing** while waiting: it does not speed anything up and
 there is a daily quota of about 10.
+
+### Result: INDEXED, 24 Sept 2026
+Searching "bowls hornby" found the live site, two days after the indexing
+request. So the whole sequence worked: verify → submit sitemap → request
+indexing. The draft did not appear, which is correct — it is private (so not
+served at all) and also carries noindex.
 
 There is also a second, **unverified "Domain property"** in the account, left
 over from an earlier attempt. It is harmless. Verifying it would need a DNS TXT
