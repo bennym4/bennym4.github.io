@@ -168,6 +168,13 @@ a:focus-visible, button:focus-visible {
   z-index: 2;
 }
 
+/* Inner pages (How to Join, Members) carry only a heading and a line or two
+   in the hero. The Home page has a photo and two buttons to fill the same
+   space, so without this they just look empty. Home keeps the full hero. */
+.hero--compact .hero-inner {
+  padding: 48px 24px 56px;
+}
+
 /* Split hero: photo runs off the right edge, text keeps the left. */
 .hero-media {
   position: absolute;
