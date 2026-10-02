@@ -36,11 +36,15 @@ or copy the draft's extra pages across without being asked.
 6. Style: ELI5, structured, one step at a time. Flag honest catches.
 
 ## Site structure (live repo)
-2 pages, sharing one stylesheet:
+3 pages, sharing one stylesheet:
 - `index.html` — Home. Sections: hero, Life at the Club (photos), New
   Players, Find Us. Two buttons also link to `join.html`.
 - `join.html` — How to Join. Sections: hero, Three Steps,
   membership-fees note.
+- `members.html` — Members. Club championship draws for the season.
+  No login: the page is fully public. The club agreed to this, so do not
+  add a password or re-gate it without being asked.
+- `files/championships-2026-27/` — the nine championship draw PDFs
 - `styles.css` — shared design system, both pages import this
 - `CNAME` — `bowlshornby.org.nz`
 - `club-green.jpg` — the Home hero photo. Shown ONCE: it was removed from
@@ -48,7 +52,7 @@ or copy the draft's extra pages across without being asked.
 - `club-deck.jpg` — the remaining "Life at the Club" photo
 - `README.md`, `CLAUDE.md` — housekeeping, not part of the site
 
-**Both pages share the same nav: `Home` · `How to Join`.** The current
+**All three pages share the same nav: `Home` · `How to Join` · `Members`.** The current
 page carries `class="active"` (maroon pill) and `aria-current="page"`.
 The homepage used to have no nav at all and join.html only a single Home
 link; that was changed on purpose, because a nav that appeared on one
@@ -114,6 +118,25 @@ notices into the live HTML.
 - Coach: Dave Vincent — 021 070 1862
 - Club has TWO full-size greens (not one — this was corrected once already)
 - New players welcome any time of season, no experience/equipment needed
+
+## Championship draws (added Oct 2026)
+`members.html` publishes the season's championship draws as PDFs in
+`files/championships-2026-27/`. They are A3 knockout brackets, linked with
+`target="_blank"` so they open in the browser's PDF viewer rather than
+downloading — that lets members zoom and pan, which is the only workable way to
+read an A3 bracket on a phone. **Do not convert them to HTML tables:** the
+bracket structure is the information, and it would have to be rebuilt every time
+a draw changes. To update, replace the PDF of the same name.
+
+Both the combined `all-draws` file and the individual event files are published.
+That duplicates content, deliberately: a member after one event should not have
+to fetch 1.3 MB of A3 and scroll through ten pages.
+
+The sheets carry about 40 members' names as initial-plus-surname. These pages
+are public and indexable, and the sitemap points Google at them. That was the
+club's decision, taken knowingly — the names are not full first names. If it is
+ever reconsidered, a `Disallow: /files/championships-2026-27/` line in
+robots.txt keeps the PDFs out of search results while leaving them clickable.
 
 ## Search engines / Google
 As of Sept 2026 the site was **not indexed at all** — `site:bowlshornby.org.nz`
