@@ -171,8 +171,20 @@ a:focus-visible, button:focus-visible {
 /* Inner pages (How to Join, Members) carry only a heading and a line or two
    in the hero. The Home page has a photo and two buttons to fill the same
    space, so without this they just look empty. Home keeps the full hero. */
+/* The hero is a <section>, so it also picks up `section { padding: 64px 0 }`
+   further down this file, on top of .hero-inner's own padding — the space was
+   being paid for twice. Zero it here and let .hero-inner be the single place
+   the hero's vertical space is set.
+   Scoped to .hero--compact on purpose: the Home hero's photo uses a -64px top
+   margin on small screens to cancel that same section padding, so removing it
+   globally would over-pull the photo on phones. */
+.hero--compact {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .hero--compact .hero-inner {
-  padding: 40px 24px 48px;
+  padding: 56px 24px 64px;
 }
 
 /* Inner-page headings sit below the Home page in the hierarchy, so the
