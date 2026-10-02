@@ -172,7 +172,15 @@ a:focus-visible, button:focus-visible {
    in the hero. The Home page has a photo and two buttons to fill the same
    space, so without this they just look empty. Home keeps the full hero. */
 .hero--compact .hero-inner {
-  padding: 48px 24px 56px;
+  padding: 40px 24px 48px;
+}
+
+/* Inner-page headings sit below the Home page in the hierarchy, so the
+   headline is capped smaller there. NOTE: this needs the doubled
+   `.hero.hero--compact` selector to outrank `.hero h1`, which is defined
+   later in this file. Simplify it to one class and the cap stops working. */
+.hero.hero--compact h1 {
+  font-size: clamp(32px, 4.4vw, 46px);
 }
 
 /* Split hero: photo runs off the right edge, text keeps the left. */
